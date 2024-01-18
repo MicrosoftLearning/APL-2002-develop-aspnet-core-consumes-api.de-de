@@ -4,11 +4,11 @@ lab:
   module: 'Module: Implement HTTP operations in ASP.NET Core Razor Pages'
 ---
 
-In dieser Übung erfahren Sie, wie Sie einer ASP.NET Core Razor Pages-App Code hinzufügen, um den HTTP-Client zu erstellen und `GET`-, `POST`-, `PUT`- und `DELETE`-Vorgänge auszuführen. Dieser Code wird den *.cshtml.cs*-CodeBehind-Dateien hinzugefügt. Der Code zum Rendern der Daten in den *CSHTML*-Dateien ist vollständig.
+In dieser Übung erfahren Sie, wie Sie einer ASP.NET Core Razor Pages-App Code hinzufügen, um den HTTP-Client zu erstellen und `GET`-, `POST`-, `PUT`- und `DELETE`-Vorgänge auszuführen. Dieser Code wird zu den *.cshtml.cs*-CodeBehind-Dateien hinzugefügt. Der Code zum Rendern der Daten in den *CSHTML*-Dateien ist abgeschlossen.
 
 ## Ziele
 
-Nachdem Sie diese Übung abgeschlossen haben, können Sie Folgendes:
+In dieser Übung lernen Sie Folgendes:
 
 * Implementieren von `IHttpClientFactory` als HTTP-Client
 * Implementieren von HTTP-Vorgängen in ASP.NET Core Razor Pages
@@ -27,7 +27,7 @@ Um die Übung durchzuführen, müssen die folgenden Komponenten auf Ihrem System
 
 Diese Übung verfügt über zwei Komponenten:
 
-* Eine App, die HTTP-Anforderungen an eine API sendet. Die App wird auf `http://localhost:5010` ausgeführt
+* Eine App, die HTTP-Anforderungen an eine API sendet. Die App wird auf `http://localhost:5010` ausgeführt.
 * Eine API, die auf HTTP-Anforderungen antwortet. Die API wird auf `http://localhost:5050` ausgeführt
 
 ![Dekorativ](media/02-architecture.png)
@@ -35,17 +35,17 @@ Diese Übung verfügt über zwei Komponenten:
 
 ## Laden Sie den Code herunter.
 
-In diesem Abschnitt laden Sie den Code für die Web-App Fruit und die Fruit-API herunter. Sie führen die Fruit-API auch lokal aus, damit sie für die Web-App verfügbar ist.
+In diesem Abschnitt laden Sie den Code für die Fruit-Web-App und die Fruit-API herunter. Sie führen die Fruit-API auch lokal aus, damit sie für die Web-App verfügbar ist.
 
 ### Aufgabe 1: Herunterladen und Ausführen des API-Codes
 
-1. Klicken Sie mit der rechten Maustaste auf den folgenden Link, und wählen Sie die Option **Link speichern unter** aus. 
+1. Klicken Sie mit der rechten Maustaste auf den folgenden Link, und wählen Sie **Link speichern unter** aus. 
 
-    * Code [FruitAPI-Projektcode](https://raw.githubusercontent.com/MicrosoftLearning/APL-2002-develop-aspnet-core-consumes-api/master/Allfiles/Downloads/FruitAPI.zip)
+    * [FruitAPI-Projektcode](https://raw.githubusercontent.com/MicrosoftLearning/APL-2002-develop-aspnet-core-consumes-api/master/Allfiles/Downloads/FruitAPI.zip)
 
-1. Starten Sie **Datei-Explorer **, und navigieren Sie zu dem Speicherort, an dem die Datei gespeichert wurde.
+1. Starten Sie **Explorer**, und navigieren Sie zum Speicherort der Datei.
 
-1. Entpacken Sie die Datei in einen eigenen Ordner.
+1. Entzippen Sie die Datei in ihren eigenen Ordner.
 
 1. Öffnen Sie **Windows-Terminal** oder eine **Eingabeaufforderung**, und navigieren Sie zu dem Speicherort, an dem Sie den Code für die API extrahiert haben.
 
@@ -55,7 +55,7 @@ In diesem Abschnitt laden Sie den Code für die Web-App Fruit und die Fruit-API 
     dotnet run
     ```
 
-1. Im Folgenden finden Sie ein Beispiel für die generierte Ausgabe. Beachten Sie die Zeile `Now listening on: http://localhost:5050` in der Ausgabe. Sie identifiziert den Host und Port für die API.
+1. Im Folgenden finden Sie ein Beispiel für die generierte Ausgabe. Beachten Sie die Zeile `Now listening on: http://localhost:5050` in der Ausgabe. Sie identifiziert den Host und den Port für die API.
 
     ```
     info: Microsoft.EntityFrameworkCore.Update[30100]
@@ -75,27 +75,27 @@ In diesem Abschnitt laden Sie den Code für die Web-App Fruit und die Fruit-API 
 
 ### Aufgabe 2: Herunterladen und Öffnen des Web-App-Projekts
 
-1. Klicken Sie mit der rechten Maustaste auf den folgenden Link, und wählen Sie die Option **Link speichern unter** aus. 
+1. Klicken Sie mit der rechten Maustaste auf den folgenden Link, und wählen Sie **Link speichern unter** aus. 
 
-    * [CodeBehind-Projektcode für Fruit-Web-App](https://raw.githubusercontent.com/MicrosoftLearning/APL-2002-develop-aspnet-core-consumes-api/master/Allfiles/Downloads/FruitWebApp-codebehind.zip)
+    * [CodeBehind-Projektcode für die Fruit-Web-App](https://raw.githubusercontent.com/MicrosoftLearning/APL-2002-develop-aspnet-core-consumes-api/master/Allfiles/Downloads/FruitWebApp-codebehind.zip)
 
-1. Starten Sie **Datei-Explorer **, und navigieren Sie zu dem Speicherort, an dem die Datei gespeichert wurde.
+1. Starten Sie **Explorer**, und navigieren Sie zum Speicherort der Datei.
 
-1. Entpacken Sie die Datei in einen eigenen Ordner.
+1. Entzippen Sie die Datei in ihren eigenen Ordner.
 
 1. Starten Sie Visual Studio Code, und wählen Sie in der Menüleiste **Datei** und dann **Ordner öffnen** aus.
 
-1. Navigieren Sie zu dem Speicherort, an dem Sie die Projektdateien extrahiert haben, und wählen Sie den Ordner *FruitWebApp-codebehind* aus.
+1. Navigieren Sie zu dem Speicherort, an dem Sie die Projektdateien entzippt haben, und wählen Sie den Ordner *FruitWebApp-codebehind* aus.
 
 1. Die Projektstruktur im Bereich **Explorer** sollte dem folgenden Screenshot ähneln. Sollte der Bereich **Explorer** nicht sichtbar sein, wählen Sie in der Menüleiste **Ansicht** und anschließend **Explorer** aus.
 
-    ![Screenshot der Struktur des Web-App-Projekts Fruit.](media/02-web-app-cb-struture.png)
+    ![Screenshot der Projektstruktur der Fruit-Web-App.](media/02-web-app-cb-struture.png)
 
->**Hinweis:** Nehmen Sie sich Zeit, um den Code in den einzelnen Dateien zu überprüfen, die während dieser Übung bearbeitet werden. Der Code enthält viele Kommentare, und dies kann Ihnen helfen, die Codebasis zu verstehen.
+>**Hinweis:** Nehmen Sie sich Zeit, um den Code in den einzelnen Dateien zu überprüfen, die während dieser Übung bearbeitet werden. Der Code ist stark kommentiert und kann Ihnen dabei helfen, die Codebasis zu verstehen.
 
 ## Implementieren von Code für den HTTP-Client und den `GET`-Vorgang
 
-Die Web-App Fruit zeigt die API-Beispieldaten auf der Startseite an. Sie müssen Code hinzufügen, um sowohl den HTTP-Client als auch den `GET`-Vorgang zu implementieren, damit die Web-App Daten auf der Startseite anzeigt, wenn sie zum ersten Mal erstellt und ausgeführt wird.
+Die Fruit-Web-App zeigt die API-Beispieldaten auf der Startseite an. Sie müssen Code hinzufügen, um sowohl den HTTP-Client als auch den `GET`-Vorgang zu implementieren, damit die Web-App Daten auf der Startseite anzeigt, wenn sie zum ersten Mal erstellt und ausgeführt wird.
 
 ### Aufgabe 1: Implementieren des HTTP-Clients
 
@@ -114,7 +114,7 @@ Die Web-App Fruit zeigt die API-Beispieldaten auf der Startseite an. Sie müssen
 
 1. Speichern Sie die Änderungen an *Program.cs*.
 
-### Aufgabe 2: Implementieren des GET-Vorgangs
+### Aufgabe 2: Implementieren des Vorgangs `GET`
 
 1. Wählen Sie im Bereich **Explorer** die Datei *Index.cshtml.cs* aus, um sie zur Bearbeitung zu öffnen.
 
@@ -140,29 +140,29 @@ Die Web-App Fruit zeigt die API-Beispieldaten auf der Startseite an. Sie müssen
       }
     ```
 
-1. Speichern Sie die Änderungen in der Datei *Index.cshtml.cs*.
+1. Speichern Sie die Änderungen an *Index.cshtml.cs*.
 
-1. Überprüfen Sie den Code in der Datei *Index.cshtml.cs*. Beachten Sie, wo `IHttpClientFactory` zur Seite mit Abhängigkeitsinjektion hinzugefügt wird. Beachten Sie außerdem, dass das Datenmodell mithilfe des `[BindProperty]`-Attributs an die Seite gebunden wird.
+1. Überprüfen Sie den Code in der Datei *Index.cshtml.cs*. Beachten Sie, wo `IHttpClientFactory` zur Seite mit Abhängigkeitsinjektion hinzugefügt wird. Beachten Sie außerdem, dass das Datenmodell mithilfe des Attributs `[BindProperty]` an die Seite gebunden ist.
 
 ### Aufgabe 3: Ausführen der Web-App
 
-1. Wählen Sie im oberen Menü in Visual Studio Code **Ausführen \| Debuggen starten** aus, oder drücken Sie **F5**. Nachdem das Projekt fertiggestellt ist, sollte ein Browserfenster mit der ausgeführten Web-App geöffnet werden und die API-Beispieldaten anzeigen, wie im folgenden Screenshot dargestellt.
+1. Wählen Sie im oberen Menü in Visual Studio Code **Ausführen \| Debuggen starten** aus, oder drücken Sie **F5**. Nachdem das Projekt das Erstellen eines Browserfensters abgeschlossen hat, sollte die ausgeführte Web-App gestartet werden und die API-Beispieldaten sollten angezeigt werden, wie im folgenden Screenshot dargestellt.
 
-    ![Screenshot der Web-App mit den Beispieldaten.](media/02-web-app-get-sample-data.png)
+    ![Screenshot der Web-App, in der die Beispieldaten angezeigt werden.](media/02-web-app-get-sample-data.png)
 
-    >**Hinweis:** Im weiteren Verlauf der Übung fügen Sie Code hinzu, um die Funktionen zum Hinzufügen, Bearbeiten und Löschen in der Web-App zu aktivieren. 
+    >**Hinweis:** Später in der Übung fügen Sie Code hinzu, um die Funktionalität zum Hinzufügen, Bearbeiten und Löschen der Web-App zu aktivieren. 
 
-    >**Hinweis:** Sie können die folgende Eingabeaufforderung problemlos ignorieren, wenn sie während der Ausführung der App angezeigt wird.
+    >**Hinweis:** Sie können die folgende Eingabeaufforderung problemlos ignorieren, wenn sie bei der Ausführung der App angezeigt wird.
 
     ![Screenshot der Eingabeaufforderung zum Installieren eines selbstsignierten Zertifikats.](media/install-cert.png)
 
-1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte, und wählen Sie in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
+1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte. Wählen Sie anschließend in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
 
-## Implementieren von Code für die Vorgänge POST, PUT und DELETE
+## Implementieren von Code für die Vorgänge `POST`, `PUT` und `DELETE`
 
-In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionen **Zu Liste hinzufügen**, **Bearbeiten** und **Löschen** in der Web-App zu aktivieren. 
+In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionalität **Zu Liste hinzufügen**, **Bearbeiten** und **Löschen** in der Web-App zu aktivieren. 
 
-### Aufgabe 1: Implementieren des POST-Vorgangs
+### Aufgabe 1: Implementieren des Vorgangs `POST`
 
 1. Wählen Sie im Bereich **Explorer** die Datei *Add.cshtml.cs* aus, um sie zur Bearbeitung zu öffnen.
 
@@ -198,17 +198,17 @@ In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionen **Zu Li
     }
     ```
 
-1. Speichern Sie die Änderungen in der Datei *Add.cshtml.cs*, und überprüfen Sie die Kommentare im Code.
+1. Speichern Sie die Änderungen an *Add.cshtml.cs*, und überprüfen Sie die Kommentare im Code.
 
-1. Wählen Sie im oberen Menü in Visual Studio Code **Ausführen \| Debuggen starten** aus, oder drücken Sie **F5**. Nachdem das Projekt fertiggestellt ist, sollte ein Browserfenster mit der ausgeführten Webanwendung geöffnet werden.
+1. Wählen Sie im oberen Menü in Visual Studio Code **Ausführen \| Debuggen starten** aus, oder drücken Sie **F5**. Nach Abschluss des Projekts sollte das Erstellen eines Browserfensters mit der ausgeführten Web-App gestartet werden
 
-1. Wählen Sie die Schaltfläche **Zur Liste hinzufügen** aus, und füllen Sie das generierte Formular aus. Wählen Sie dann die Schaltfläche **Erstellen** aus.
+1. Wählen Sie die Schaltfläche **Zu Liste hinzufügen** aus, und füllen Sie das generierte Formular aus. Wählen Sie dann die Schaltfläche **Erstellen** aus.
 
 1. Vergewissern Sie sich, dass Ihre Hinzufügung am Ende der Liste angezeigt wird. Die Erfolgs-/Fehlermeldung am oberen Rand der Seite benachrichtigt Sie, wenn ein Problem aufgetreten ist.
 
-1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte, und wählen Sie in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
+1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte. Wählen Sie anschließend in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
 
-### Aufgabe 1: Implementieren des PUT-Vorgangs
+### Aufgabe 1: Implementieren des Vorgangs `PUT`
 
 1. Wählen Sie im Bereich **Explorer** die Datei *Edit.cshtml.cs* aus, um sie zur Bearbeitung zu öffnen.
 
@@ -245,18 +245,18 @@ In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionen **Zu Li
         }
     ```
 
-1. Speichern Sie die Änderungen in der Datei *Edit.cshtml.cs*, und überprüfen Sie die Kommentare im Code.
+1. Speichern Sie die Änderungen an *Edit.cshtml.cs*, und überprüfen Sie die Kommentare im Code.
 
-1. Wählen Sie im oberen Menü in Visual Studio Code **Ausführen \| Debuggen starten** aus, oder drücken Sie **F5**. Nachdem das Projekt fertiggestellt ist, sollte ein Browserfenster mit der ausgeführten Webanwendung geöffnet werden.
+1. Wählen Sie im oberen Menü in Visual Studio Code **Ausführen \| Debuggen starten** aus, oder drücken Sie **F5**. Nach Abschluss des Projekts sollte das Erstellen eines Browserfensters mit der ausgeführten Web-App gestartet werden
 
-1. Wählen Sie in der Liste ein Element aus, das bearbeitet werden soll, und wählen Sie anschließend die Schaltfläche **Bearbeiten** aus. 
-1. Bearbeiten Sie die Felder **Fruit Name** und **Available?**, und wählen Sie dann **Aktualisieren** aus.
+1. Wählen Sie in der Liste ein Element aus, das bearbeitet werden soll, und wählen Sie die Schaltfläche **Bearbeiten** aus. 
+1. Bearbeiten Sie den **Namen der Frucht** und das Feld **Verfügbar?**, und wählen Sie dann **Aktualisieren** aus.
 
 1. Überprüfen Sie, ob Ihre Änderungen in der Liste angezeigt werden. Die Erfolgs-/Fehlermeldung am oberen Rand der Seite benachrichtigt Sie, wenn ein Problem aufgetreten ist.
 
-1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte, und wählen Sie in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
+1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte. Wählen Sie anschließend in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
 
-### Aufgabe 1: Implementieren des DELETE-Vorgangs
+### Aufgabe 1: Implementieren des Vorgangs `DELETE`
 
 1. Wählen Sie im Bereich **Explorer** die Datei *Delete.cshtml.cs* aus, um sie zur Bearbeitung zu öffnen.
 
@@ -287,25 +287,25 @@ In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionen **Zu Li
     }
     ```
 
-1. Speichern Sie die Änderungen in der Datei *Delete.cshtml.cs*, und überprüfen Sie die Kommentare im Code.
+1. Speichern Sie die Änderungen an *Delete.cshtml.cs*, und überprüfen Sie die Kommentare im Code.
 
-1. Wählen Sie im oberen Menü in Visual Studio Code **Ausführen \| Debuggen starten** aus, oder drücken Sie **F5**. Nachdem das Projekt fertiggestellt ist, sollte ein Browserfenster mit der ausgeführten Webanwendung geöffnet werden.
+1. Wählen Sie im oberen Menü in Visual Studio Code **Ausführen \| Debuggen starten** aus, oder drücken Sie **F5**. Nach Abschluss des Projekts sollte das Erstellen eines Browserfensters mit der ausgeführten Web-App gestartet werden
 
 1. Wählen Sie in der Liste ein Element aus, das gelöscht werden soll, und wählen Sie die Schaltfläche **Löschen** aus. 
 
-1. Bearbeiten Sie die Felder **Fruit Name** und **Available?**, und wählen Sie dann **Aktualisieren** aus.
+1. Bearbeiten Sie den **Namen der Frucht** und das Feld **Verfügbar?**, und wählen Sie dann **Aktualisieren** aus.
 
 1. Vergewissern Sie sich, dass das Element nicht mehr in der Liste angezeigt wird. Die Erfolgs-/Fehlermeldung am oberen Rand der Seite benachrichtigt Sie, wenn ein Problem aufgetreten ist.
 
 Wenn Sie bereit sind, die Übung zu beenden:
 
-* Schließen Sie den Browser oder die Browserregisterkarte, und wählen Sie in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**. 
+* Schließen Sie den Browser oder die Browserregisterkarte. Wählen Sie anschließend in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**. 
 
-* Beenden Sie die Fruit-API, indem Sie in dem Terminal, in dem sie ausgeführt wird, **STRG+C** drücken.
+* Beenden Sie die Fruit-API, indem Sie im Terminal, in dem sie ausgeführt wird, `Ctrl + C` eingeben.
 
 ## Überprüfung
 
 In dieser Übung haben Sie Folgendes gelernt:
 
 * Implementieren von `IHttpClientFactory` als HTTP-Client
-* Implementieren von HTTP-Vorgängen in ASP.NET Core Razor Pages-CodeBehind-Dateien
+* Implementieren von HTTP-Vorgängen in CodeBehind-Dateien von ASP.NET Core Razor Pages
