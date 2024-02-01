@@ -114,7 +114,7 @@ Die Fruit-Web-App zeigt die API-Beispieldaten auf der Startseite an. Sie müssen
 
 1. Speichern Sie die Änderungen an *Program.cs*.
 
-### Aufgabe 2: Implementieren des Vorgangs `GET`
+### Aufgabe 2: Implementieren des GET-Vorgangs
 
 1. Wählen Sie im Bereich **Explorer** die Datei *Index.cshtml.cs* aus, um sie zur Bearbeitung zu öffnen.
 
@@ -156,13 +156,13 @@ Die Fruit-Web-App zeigt die API-Beispieldaten auf der Startseite an. Sie müssen
 
     ![Screenshot der Eingabeaufforderung zum Installieren eines selbstsignierten Zertifikats.](media/install-cert.png)
 
-1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte. Wählen Sie anschließend in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
+1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte, und wählen Sie in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
 
-## Implementieren von Code für die Vorgänge `POST`, `PUT` und `DELETE`
+## Implementieren von Code für die Vorgänge POST, PUT und DELETE
 
-In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionalität **Zu Liste hinzufügen**, **Bearbeiten** und **Löschen** in der Web-App zu aktivieren. 
+In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionen **Zu Liste hinzufügen**, **Bearbeiten** und **Löschen** in der Web-App zu aktivieren. 
 
-### Aufgabe 1: Implementieren des Vorgangs `POST`
+### Aufgabe 1: Implementieren des POST-Vorgangs
 
 1. Wählen Sie im Bereich **Explorer** die Datei *Add.cshtml.cs* aus, um sie zur Bearbeitung zu öffnen.
 
@@ -206,9 +206,9 @@ In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionalität **
 
 1. Vergewissern Sie sich, dass Ihre Hinzufügung am Ende der Liste angezeigt wird. Die Erfolgs-/Fehlermeldung am oberen Rand der Seite benachrichtigt Sie, wenn ein Problem aufgetreten ist.
 
-1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte. Wählen Sie anschließend in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
+1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte, und wählen Sie in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
 
-### Aufgabe 1: Implementieren des Vorgangs `PUT`
+### Aufgabe 1: Implementieren des PUT-Vorgangs
 
 1. Wählen Sie im Bereich **Explorer** die Datei *Edit.cshtml.cs* aus, um sie zur Bearbeitung zu öffnen.
 
@@ -254,9 +254,9 @@ In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionalität **
 
 1. Überprüfen Sie, ob Ihre Änderungen in der Liste angezeigt werden. Die Erfolgs-/Fehlermeldung am oberen Rand der Seite benachrichtigt Sie, wenn ein Problem aufgetreten ist.
 
-1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte. Wählen Sie anschließend in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
+1. Wenn Sie mit der Übung fortfahren möchten, schließen Sie den Browser oder die Browserregisterkarte, und wählen Sie in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**.
 
-### Aufgabe 1: Implementieren des Vorgangs `DELETE`
+### Aufgabe 1: Implementieren des DELETE-Vorgangs
 
 1. Wählen Sie im Bereich **Explorer** die Datei *Delete.cshtml.cs* aus, um sie zur Bearbeitung zu öffnen.
 
@@ -291,17 +291,16 @@ In diesem Abschnitt fügen Sie dem Projekt Code hinzu, um die Funktionalität **
 
 1. Wählen Sie im oberen Menü in Visual Studio Code **Ausführen \| Debuggen starten** aus, oder drücken Sie **F5**. Nach Abschluss des Projekts sollte das Erstellen eines Browserfensters mit der ausgeführten Web-App gestartet werden
 
-1. Wählen Sie in der Liste ein Element aus, das gelöscht werden soll, und wählen Sie die Schaltfläche **Löschen** aus. 
-
-1. Bearbeiten Sie den **Namen der Frucht** und das Feld **Verfügbar?**, und wählen Sie dann **Aktualisieren** aus.
+1. Wählen Sie in der Liste ein Element aus, das gelöscht werden soll, und wählen Sie die Schaltfläche **Löschen** aus.
+2. Überprüfen Sie auf der Seite „Löschen“, ob das ausgewählte Element angezeigt wird, und klicken Sie auf die Schaltfläche **Löschen**.
 
 1. Vergewissern Sie sich, dass das Element nicht mehr in der Liste angezeigt wird. Die Erfolgs-/Fehlermeldung am oberen Rand der Seite benachrichtigt Sie, wenn ein Problem aufgetreten ist.
 
 Wenn Sie bereit sind, die Übung zu beenden:
 
-* Schließen Sie den Browser oder die Browserregisterkarte. Wählen Sie anschließend in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**. 
+* Schließen Sie den Browser oder die Browserregisterkarte, und wählen Sie in Visual Studio Code **Ausführen \| Debuggen beenden** aus, oder drücken Sie **UMSCHALT+F5**. 
 
-* Beenden Sie die Fruit-API, indem Sie im Terminal, in dem sie ausgeführt wird, `Ctrl + C` eingeben.
+* Beenden Sie die Fruit-API, indem Sie in dem Terminal, in dem sie ausgeführt wird, **STRG+C** drücken.
 
 ## Überprüfung
 
