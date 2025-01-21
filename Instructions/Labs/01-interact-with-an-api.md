@@ -18,7 +18,7 @@ Nach Abschluss dieser Übung können Sie Folgendes:
 Um die Übung durchzuführen, müssen die folgenden Komponenten auf Ihrem System installiert sein:
 
 * [Visual Studio Code](https://code.visualstudio.com)
-* [Das aktuelle .NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+* [Das aktuelle .NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 * [Die C#-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) für Visual Studio Code
 * Die Erweiterung [Azure-Ressourcen](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureresourcegroups) für Visual Studio Code
 * Die Erweiterung [Azure App Service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) für Visual Studio Code.
@@ -30,7 +30,7 @@ Um die Übung durchzuführen, müssen die folgenden Komponenten auf Ihrem System
 
 Die API interagiert mit einer In-Memory Database, die die folgenden Felder enthält:
 
-Feld | Typ | Beschreibung
+Feld | type | Beschreibung
 --- | --- | ---
 `id` | integer | Schlüssel für die Daten
 `name` | Zeichenfolge | Name der Frucht
@@ -110,13 +110,13 @@ In diesem Abschnitt führen Sie folgende Schritte aus:
 
 ### Aufgabe 1: Ausführen eines `GET`-Vorgangs
 
-1. Erweitern Sie den **GET**-Vorgang im Abschnitt **Get all fruit**, indem Sie auf eine beliebige Stelle im Feld des **GET**-Vorgangs klicken.
+1. Erweitern Sie den **GET**-Vorgang mit dem Deskriptor **Get all fruits**, indem Sie auf eine beliebige Stelle im Feld des **GET**-Vorgangs klicken.
 
 1. Untersuchen Sie die Abschnitte des Vorgangs, und notieren Sie sich die in der folgenden Tabelle gezeigten Informationen.
 
-    | `Section` | Beschreibung |
+    | Abschnitt | Beschreibung |
     |---|--|
-    | **Endpunkt** | Wird in der Kopfzeile des Vorgangs angezeigt. Der Endpunkt wird als `/fruitlist` angezeigt. Der vollständige URI ist die Basis-URL für die API, dem der angegebene Endpunkt angefügt ist, in unserem Beispiel `http://localhost:5050/fruitlist`. |
+    | **Endpunkt** | Wird in der Kopfzeile des Vorgangs angezeigt. Der Endpunkt wird als `/fruits` angezeigt. Der vollständige URI ist die Basis-URL für die API, dem der angegebene Endpunkt angefügt ist, in unserem Beispiel `http://localhost:5050/fruits`. |
     | **Parameter** | Für diesen Vorgang sind keine erforderlich. |
     | **Medientyp** | Gibt die Medientypcodierung an, die der Vorgang zurückgibt. |
     | **Beispielwert** | Zeigt das Schema der vom Vorgang zurückgegebenen Daten an. Beachten Sie, dass dieser Vorgang ein JSON-Array zurückgibt. |
@@ -130,13 +130,13 @@ In diesem Abschnitt führen Sie folgende Schritte aus:
 
 ### Aufgabe 2: Ausführen eines `POST`-Vorgangs
 
-1. Erweitern Sie den Vorgang **POST** im Abschnitt **Add fruit to list**, indem Sie auf eine beliebige Stelle im Feld des **POST**-Vorgangs klicken.
+1. Erweitern Sie den Vorgang **POST** mit dem Deskriptor **Create a new fruit**, indem Sie auf eine beliebige Stelle im Feld des **POST**-Vorgangs klicken.
 
 1. Untersuchen Sie die Abschnitte des Vorgangs, und notieren Sie sich die in der folgenden Tabelle gezeigten Informationen.
 
-    | `Section` | Beschreibung |
+    | Abschnitt | Beschreibung |
     |---|--|
-    | **Endpunkt** | Der Endpunkt wird als `/fruitlist` angezeigt. Der vollständige URI ist die Basis-URL für die API, dem der angegebene Endpunkt angefügt ist, in unserem Beispiel `http://localhost:5050/fruitlist`. |
+    | **Endpunkt** | Der Endpunkt wird als `/fruits` angezeigt. Der vollständige URI ist die Basis-URL für die API, dem der angegebene Endpunkt angefügt ist, in unserem Beispiel `http://localhost:5050/fruits`. |
     | **Parameter** | Für diesen Vorgang sind keine erforderlich. |
     | **Anforderungstext** | Der **Anforderungstext** ist erforderlich, da die API erwartet, dass Daten zur Liste hinzugefügt werden, und sie erwartet den Medientyp `application/json`. |
     | **Beispielwert** | Zeigt das Schema der Daten an, die die API erwartet. |  
@@ -160,17 +160,17 @@ In diesem Abschnitt führen Sie folgende Schritte aus:
     * **Anforderungs-URL:** Die URL, auf die im Vorgang zugegriffen wurde.
     * **Serverantwort:** Zeigt den Erfolgscode aus dem Vorgang an, und der **Antworttext** zeigt den Eintrag an, der der Datenbank hinzugefügt wurde.
 
-1. Führen Sie den Befehl `GET` im Abschnitt **Get all Fruit in List** aus, und beachten Sie, dass jetzt ein Eintrag für *Pear* enthalten ist.
+1. Führen Sie den Befehl `GET` im Abschnitt **Get all fruits** aus, und beachten Sie, dass jetzt ein Eintrag für *Pear* enthalten ist.
 
 ### Aufgabe 3: Ausführen eines `DELETE`-Vorgangs
 
-1. Erweitern Sie den Vorgang **DELETE** im Abschnitt **Delete fruit by Id**, indem Sie auf eine beliebige Stelle im Feld des Vorgangs **DELETE** klicken.
+1. Erweitern Sie den Vorgang **DELETE** mit dem Deskriptor **Delete a fruit by Id**, indem Sie auf eine beliebige Stelle im Feld des Vorgangs **DELETE** klicken.
 
 1. Untersuchen Sie die Abschnitte des Vorgangs, und notieren Sie sich die in der folgenden Tabelle gezeigten Informationen.
 
-    | `Section` | Beschreibung |
+    | Abschnitt | Beschreibung |
     |---|--|
-    | **Endpunkt** | Der Endpunkt wird als `/fruitlist/{id}` angezeigt. Der vollständige URI ist die Basis-URL für die API, dem `id` zum Löschen angefügt wurde. Beispielsweise verweist `http://localhost:5050/fruitlist/1` auf den Eintrag, wobei `id` gleich `1` ist.
+    | **Endpunkt** | Der Endpunkt wird als `/fruits/{id}` angezeigt. Der vollständige URI ist die Basis-URL für die API, dem `id` zum Löschen angefügt wurde. Beispielsweise verweist `http://localhost:5050/fruits/1` auf den Eintrag, wobei `id` gleich `1` ist.
     | **Parameter** | Erfordert, dass die `id` des Eintrags in der Anforderungs-URL übergeben wird. |
 
 1. Um den Vorgang auszuführen, wählen Sie die Schaltfläche **Jetzt ausprobieren** aus. 
@@ -183,11 +183,11 @@ In diesem Abschnitt führen Sie folgende Schritte aus:
     * **Antworttext:** Zeigt den gelöschten Eintrag an.
     * **Code:** Zeigt den Erfolgscode aus dem Vorgang an.
 
-1. Führen Sie den Befehl `GET` im Abschnitt **Get all fruits in list** aus, und beachten Sie, dass der Eintrag für *Apple* jetzt gelöscht ist.
+1. Führen Sie den Befehl `GET` im Abschnitt **Get all fruits** aus, und beachten Sie, dass der Eintrag für *Apple* jetzt gelöscht ist.
 
-Wenn Sie bereit sind, zum nächsten Abschnitt der Übung zu wechseln:
+Wenn Sie bereit sind, mit dem nächsten Abschnitt der Übung fortzufahren:
 
-* Schließen Sie den Browser und beenden Sie die Fruit-API, indem Sie `Ctrl + C` in das Terminal eingeben, in dem sie ausgeführt wird.
+* Schließen Sie den Browser, und beenden Sie die Fruit-API, indem Sie in dem Terminal, in dem sie ausgeführt wird, **STRG+C** drücken.
 
 ## Veröffentlichen der API in Azure App Service
 
@@ -220,7 +220,7 @@ In diesem Abschnitt führen Sie folgende Schritte aus:
 
 1. Wählen Sie **+Neue Ressourcengruppe erstellen** aus, und akzeptieren Sie den Standardwert oder geben Sie `fruitapi-rg` ein.
 
-1. Wählen Sie **.NET 7 (STS)** als Laufzeitstapel aus.
+1. Wählen Sie **.NET 8 (LTS)** als Laufzeitstapel aus.
 
 1. Wählen Sie **Linux** als Betriebssystem aus.
 
@@ -242,7 +242,9 @@ Das Tool erstellt die erforderlichen Ressourcen in Azure und kompiliert den Code
 
 1. Wenn die Bereitstellung abgeschlossen ist, wird ein neues Popup mit der Option zum **Durchsuchen der Website** angezeigt. Wählen Sie **Website durchsuchen** aus.
 
-1. Fügen Sie in dem Browserfenster, das geöffnet wird, am Ende der URL `/swagger` hinzu. 
+1. In dem Browserfenster, das geöffnet wird, müssen Sie am Ende der URL möglicherweise `/fruits` hinzufügen. Die unformatierte Ausgabe aus der API zeigt alle Daten an.
+
+    >**HINWEIS:** Die Swagger-Benutzeroberfläche ist deaktiviert, da sie nur für Entwicklungsumgebungen aktiviert ist. Die Bereitstellung in App Service gilt als Nicht-Entwicklungsumgebung, es sei denn, Sie führen eine zusätzliche Konfiguration aus.
 
 Herzlichen Glückwunsch! Sie haben die API in Azure App Service bereitgestellt.
 
